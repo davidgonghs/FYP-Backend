@@ -1,0 +1,42 @@
+server:
+  port: 9092
+
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/fyp?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&serverTimezone=GMT%2B8
+    username: root
+    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+mybatis-plus:
+#  放在src/main/java下的  classpath:/com/dghs/fyp/backend/**/*Mapper.xml
+#  如果放在 resources下的  classpath:/mapper/**/*Mapper.xml
+  mapper-locations: classpath:/com/dghs/fyp/backend/**/*Mapper.xml
+
+  global-config:
+
+      db-config:
+        #0:"数据库ID自增", 1:"用户输入ID",2:"全局唯一ID (数字类型唯一ID)", 3:"全局唯一ID UUID";
+        id-type: input
+        #字段策略 0:"忽略判断",1:"非 NULL 判断"),2:"非空判断"
+        field-strategy: NOT_NULL
+        #驼峰下划线转换
+#        db-column-underline: true
+#        #刷新mapper 调试神器
+#        refresh-mapper: true
+        #数据库大写下划线转换
+        #capital-mode: true
+        #逻辑删除配置
+        logic-delete-value: 1
+        logic-not-delete-value: 0
+
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+#    配置jdbcTypeForNull, oracle数据库必须配置
+    jdbc-type-for-null: 'null'
+    call-setters-on-nulls: true
