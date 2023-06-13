@@ -20,23 +20,25 @@ import java.util.List;
  * @author David Gong
  * @since 2023-06-13
  */
-@Api(tags = "user management")
+@Api(tags = "user API")
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/user")
 @RequiredArgsConstructor
-
 public class UserController {
 
     private final UserService userService;
 
-    @ApiOperation("get all users")
-    @RequestMapping("/all")
+
+
+
+    @ApiOperation("list")
+    @GetMapping("/list")
     public Object getAllUsers() {
         List<User> users = userService.list();
         return users;
     }
 
-    @ApiOperation("get user by page")
+    @ApiOperation("pagination")
     @PostMapping("/page")
     public IPage<User> pageUser(IPage<User> page) {
         IPage<User> userIPage = userService.page(page);
@@ -44,16 +46,16 @@ public class UserController {
     }
 
 
-    @ApiOperation("get user by id")
-    @RequestMapping("/get")
+    @ApiOperation("getUserById")
+    @GetMapping("/get")
     public User getUserById(Integer id) {
         User user = userService.getById(id);
         return user;
     }
 
 
-    @ApiOperation("add user")
-    @PostMapping("/add")
+    @ApiOperation("addUser")
+    @PostMapping()
     public String addUser(@RequestBody User user) {
         user.setUserId(IdUtil.getSnowflake(ServerConfig.WORKER_ID, ServerConfig.DATA_CENTER_ID).nextIdStr());
         boolean result = userService.save(user);
@@ -65,8 +67,8 @@ public class UserController {
     }
 //
 //
-    @ApiOperation("update user")
-    @PutMapping("/update")
+    @ApiOperation("updateUser")
+    @PutMapping()
     public String updateUser(@RequestBody User user) {
         boolean result = userService.updateById(user);
         if (result) {
@@ -76,8 +78,8 @@ public class UserController {
         }
     }
 
-    @ApiOperation("delete user")
-    @DeleteMapping("/delete")
+    @ApiOperation("deleteUser")
+    @DeleteMapping()
     public String deleteUser(@RequestBody List<String> ids) {
         boolean result = userService.removeByIds(ids);
         if (result) {
