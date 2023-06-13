@@ -24,7 +24,7 @@ import lombok.Setter;
 @Setter
 @TableName("users")
 @ApiModel(value = "Users对象", description = "")
-public class Users implements Serializable {
+public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
 

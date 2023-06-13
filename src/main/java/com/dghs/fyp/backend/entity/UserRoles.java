@@ -1,5 +1,6 @@
 package com.dghs.fyp.backend.entity;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
@@ -27,7 +28,7 @@ public class UserRoles implements Serializable {
     @TableId("user_id")
     private Integer userId;
 
-    @TableId("role_id")
+    @TableField("role_id")
     private Integer roleId;
 
 

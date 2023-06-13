@@ -3,7 +3,7 @@
 <mapper namespace="com.dghs.fyp.backend.mapper.UsersMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.dghs.fyp.backend.entity.Users">
+    <resultMap id="BaseResultMap" type="com.dghs.fyp.backend.entity.User">
         <id column="user_id" property="userId" />
         <result column="user_img" property="userImg" />
         <result column="nickname" property="nickname" />
@@ -22,5 +22,12 @@
     <sql id="Base_Column_List">
         user_id, user_img, nickname, sign, email, phone, gender, birthday, password, created_time, updated_time, updated_by
     </sql>
+
+<!--    select list-->
+    <select id="selectAll" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List" />
+        FROM users
+    </select>
 
 </mapper>

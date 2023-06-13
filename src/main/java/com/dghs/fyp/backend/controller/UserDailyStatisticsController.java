@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 2023-06-13
  */
 @RestController
-@RequestMapping("/sys/user-daily-statistics")
+@RequestMapping("/user-daily-statistics")
 public class UserDailyStatisticsController {
 
 }
