@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dghs.fyp.backend.mapper.UserSettingsMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.dghs.fyp.backend.entity.UserSettings">
+        <id column="user_id" property="userId" />
+        <result column="calculation_mode" property="calculationMode" />
+        <result column="pomodoro_intervals" property="pomodoroIntervals" />
+        <result column="pomodoro_rest_time" property="pomodoroRestTime" />
+        <result column="voice_reminder_1" property="voiceReminder1" />
+        <result column="voice_reminder_2" property="voiceReminder2" />
+        <result column="voice_reminder_3" property="voiceReminder3" />
+        <result column="daily_usage_reminder_time" property="dailyUsageReminderTime" />
+        <result column="created_time" property="createdTime" />
+        <result column="updated_time" property="updatedTime" />
+        <result column="updated_by" property="updatedBy" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        user_id, calculation_mode, pomodoro_intervals, pomodoro_rest_time, voice_reminder_1, voice_reminder_2, voice_reminder_3, daily_usage_reminder_time, created_time, updated_time, updated_by
+    </sql>
+
+</mapper>
