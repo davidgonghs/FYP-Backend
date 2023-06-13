@@ -1,6 +1,6 @@
 package com.dghs.fyp.backend.mapper;
 
-import com.dghs.fyp.backend.sys.entity.UserDailyStatistics;
+import com.dghs.fyp.backend.entity.UserDailyStatistics;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**

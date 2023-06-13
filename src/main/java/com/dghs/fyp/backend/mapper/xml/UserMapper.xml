@@ -3,7 +3,7 @@
 <mapper namespace="com.dghs.fyp.backend.mapper.UserMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.dghs.fyp.backend.sys.entity.User">
+    <resultMap id="BaseResultMap" type="com.dghs.fyp.backend.entity.User">
         <id column="user_id" property="userId" />
         <result column="user_img" property="userImg" />
         <result column="nickname" property="nickname" />

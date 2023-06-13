@@ -1,6 +1,6 @@
 package com.dghs.fyp.backend.service;
 
-import com.dghs.fyp.backend.sys.entity.Role;
+import com.dghs.fyp.backend.entity.Role;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**

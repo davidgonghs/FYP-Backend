@@ -1,6 +1,6 @@
 package com.dghs.fyp.backend.service.impl;
 
-import com.dghs.fyp.backend.sys.entity.UserRoles;
+import com.dghs.fyp.backend.entity.UserRoles;
 import com.dghs.fyp.backend.mapper.UserRolesMapper;
 import com.dghs.fyp.backend.service.UserRolesService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;

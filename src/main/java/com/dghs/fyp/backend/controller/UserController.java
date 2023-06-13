@@ -1,14 +1,14 @@
 package com.dghs.fyp.backend.controller;
 
+import cn.hutool.core.util.IdUtil;
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.dghs.fyp.backend.common.config.ServerConfig;
 import com.dghs.fyp.backend.entity.User;
 import com.dghs.fyp.backend.service.UserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -51,17 +51,40 @@ public class UserController {
         return user;
     }
 
+
+    @ApiOperation("add user")
+    @PostMapping("/add")
+    public String addUser(@RequestBody User user) {
+        user.setUserId(IdUtil.getSnowflake(ServerConfig.WORKER_ID, ServerConfig.DATA_CENTER_ID).nextIdStr());
+        boolean result = userService.save(user);
+        if (result) {
+            return "success";
+        } else {
+            return "fail";
+        }
+    }
 //
-//    @ApiOperation("add user")
-//    @PostMapping("/add")
-//    public String addUser(@RequestBody User user) {
-//        user.setUserId(IdUtil);
-//        boolean result = usersService.save(user);
-//        return result;
-//    }
 //
-//
-//    @ApiOperation("update user")
-//    @ApiOperation("delete user")
+    @ApiOperation("update user")
+    @PutMapping("/update")
+    public String updateUser(@RequestBody User user) {
+        boolean result = userService.updateById(user);
+        if (result) {
+            return "success";
+        } else {
+            return "fail";
+        }
+    }
+
+    @ApiOperation("delete user")
+    @DeleteMapping("/delete")
+    public String deleteUser(@RequestBody List<String> ids) {
+        boolean result = userService.removeByIds(ids);
+        if (result) {
+            return "success";
+        } else {
+            return "fail";
+        }
+    }
 
 }

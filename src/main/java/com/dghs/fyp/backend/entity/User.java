@@ -3,6 +3,7 @@ package com.dghs.fyp.backend.entity;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModel;
 import lombok.Getter;
 import lombok.Setter;
@@ -10,6 +11,7 @@ import lombok.Setter;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 /**
  * <p>
@@ -23,7 +25,7 @@ import java.time.LocalDateTime;
 @Setter
 @TableName("user")
 @ApiModel(value = "User对象", description = "")
-public class User extends com.dghs.fyp.backend.entity.User implements Serializable {
+public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -49,16 +51,19 @@ public class User extends com.dghs.fyp.backend.entity.User implements Serializab
     private String gender;
 
     @TableField("birthday")
-    private LocalDate birthday;
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
+    private Date birthday;
 
     @TableField("password")
     private String password;
 
     @TableField("created_time")
-    private LocalDateTime createdTime;
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
+    private Date createdTime;
 
     @TableField("updated_time")
-    private LocalDateTime updatedTime;
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
+    private Date updatedTime;
 
     @TableField("updated_by")
     private String updatedBy;

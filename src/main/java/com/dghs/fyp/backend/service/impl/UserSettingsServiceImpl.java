@@ -1,6 +1,6 @@
 package com.dghs.fyp.backend.service.impl;
 
-import com.dghs.fyp.backend.sys.entity.UserSettings;
+import com.dghs.fyp.backend.entity.UserSettings;
 import com.dghs.fyp.backend.mapper.UserSettingsMapper;
 import com.dghs.fyp.backend.service.UserSettingsService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
