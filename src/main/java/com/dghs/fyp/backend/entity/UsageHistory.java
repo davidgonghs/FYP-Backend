@@ -3,7 +3,6 @@ package com.dghs.fyp.backend.entity;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModel;
 import lombok.Getter;
 import lombok.Setter;
@@ -11,7 +10,6 @@ import lombok.Setter;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import java.util.Date;
 
 /**
  * <p>
@@ -30,10 +28,10 @@ public class UsageHistory implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @TableId("history_id")
-    private String historyId;
+    private Long historyId;
 
     @TableField("user_id")
-    private String userId;
+    private Long userId;
 
     @TableField("usage_time")
     private BigDecimal usageTime;
@@ -42,8 +40,7 @@ public class UsageHistory implements Serializable {
     private BigDecimal sittingAccuracy;
 
     @TableField("created_time")
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
-    private Date createdTime;
+    private LocalDateTime createdTime;
 
 
 }

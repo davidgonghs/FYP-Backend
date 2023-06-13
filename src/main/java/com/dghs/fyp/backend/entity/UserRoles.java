@@ -26,13 +26,13 @@ public class UserRoles implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @TableId("user_role_id")
-    private String userRoleId;
+    private Long userRoleId;
 
     @TableField("user_id")
-    private String userId;
+    private Long userId;
 
     @TableField("role_id")
-    private String roleId;
+    private Long roleId;
 
 
 }

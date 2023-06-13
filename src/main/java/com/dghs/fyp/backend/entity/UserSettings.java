@@ -3,7 +3,6 @@ package com.dghs.fyp.backend.entity;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
@@ -12,7 +11,6 @@ import lombok.Setter;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
-import java.util.Date;
 
 /**
  * <p>
@@ -31,10 +29,10 @@ public class UserSettings implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @TableId("settings_id")
-    private String settingsId;
+    private Long settingsId;
 
     @TableField("user_id")
-    private String userId;
+    private Long userId;
 
     @TableField("calculation_mode")
     private String calculationMode;
@@ -58,19 +56,16 @@ public class UserSettings implements Serializable {
     private String voiceReminder3;
 
     @TableField("daily_usage_reminder_time")
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
-    private Date dailyUsageReminderTime;
+    private LocalTime dailyUsageReminderTime;
 
     @TableField("created_time")
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
-    private Date createdTime;
+    private LocalDateTime createdTime;
 
     @TableField("updated_time")
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
-    private Date updatedTime;
+    private LocalDateTime updatedTime;
 
     @TableField("updated_by")
-    private String updatedBy;
+    private Long updatedBy;
 
 
 }

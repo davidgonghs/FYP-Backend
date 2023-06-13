@@ -1,6 +1,6 @@
 CREATE TABLE user
 (
-    user_id          VARCHAR(64) PRIMARY KEY,
+    user_id          BIGINT PRIMARY KEY,
     user_img         VARCHAR(255),
     nickname         VARCHAR(50),
     sign             VARCHAR(255),
@@ -11,13 +11,13 @@ CREATE TABLE user
     password         VARCHAR(255) NOT NULL,
     created_time     TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updated_time     TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    updated_by       VARCHAR(64)
+    updated_by       BIGINT
 );
 
 CREATE TABLE user_settings
 (
-    settings_id                      VARCHAR(64) PRIMARY KEY,
-    user_id                          VARCHAR(64),
+    settings_id                      BIGINT PRIMARY KEY,
+    user_id                          BIGINT,
     calculation_mode                 VARCHAR(20),
     pomodoro_intervals               INT,
     pomodoro_rest_time               INT,
@@ -27,14 +27,14 @@ CREATE TABLE user_settings
     daily_usage_reminder_time        TIME,
     created_time     TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updated_time     TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    updated_by                       VARCHAR(64),
+    updated_by                       BIGINT,
     FOREIGN KEY (user_id) REFERENCES user(user_id)
 );
 
 CREATE TABLE user_daily_statistics
 (
-    data_id          VARCHAR(64) PRIMARY KEY,
-    user_id          VARCHAR(64),
+    data_id          BIGINT PRIMARY KEY,
+    user_id          BIGINT,
     total_usage_time INT,
     usage_time       DECIMAL(5, 2),
     sitting_accuracy DECIMAL(5, 2),
@@ -44,8 +44,8 @@ CREATE TABLE user_daily_statistics
 
 CREATE TABLE usage_history
 (
-    history_id       VARCHAR(64) PRIMARY KEY,
-    user_id          VARCHAR(64),
+    history_id       BIGINT PRIMARY KEY,
+    user_id          BIGINT,
     usage_time       DECIMAL(5, 2),
     sitting_accuracy DECIMAL(5, 2),
     created_time     TIMESTAMP,
@@ -54,15 +54,15 @@ CREATE TABLE usage_history
 
 CREATE TABLE role
 (
-    role_id   VARCHAR(64) PRIMARY KEY,
+    role_id   BIGINT PRIMARY KEY,
     role_name VARCHAR(20)
 );
 
 CREATE TABLE user_roles
 (
-    user_role_id VARCHAR(64) PRIMARY KEY,
-    user_id VARCHAR(64),
-    role_id VARCHAR(64),
+    user_role_id BIGINT PRIMARY KEY,
+    user_id BIGINT,
+    role_id BIGINT,
     FOREIGN KEY (user_id) REFERENCES user(user_id),
     FOREIGN KEY (role_id) REFERENCES role(role_id)
 );

@@ -3,7 +3,6 @@ package com.dghs.fyp.backend.entity;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModel;
 import lombok.Getter;
 import lombok.Setter;
@@ -11,7 +10,6 @@ import lombok.Setter;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.Date;
 
 /**
  * <p>
@@ -30,7 +28,7 @@ public class User implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @TableId("user_id")
-    private String userId;
+    private Long userId;
 
     @TableField("user_img")
     private String userImg;
@@ -51,22 +49,19 @@ public class User implements Serializable {
     private String gender;
 
     @TableField("birthday")
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
-    private Date birthday;
+    private LocalDate birthday;
 
     @TableField("password")
     private String password;
 
     @TableField("created_time")
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
-    private Date createdTime;
+    private LocalDateTime createdTime;
 
     @TableField("updated_time")
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
-    private Date updatedTime;
+    private LocalDateTime updatedTime;
 
     @TableField("updated_by")
-    private String updatedBy;
+    private Long updatedBy;
 
 
 }

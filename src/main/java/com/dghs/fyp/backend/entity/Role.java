@@ -26,7 +26,7 @@ public class Role implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @TableId("role_id")
-    private String roleId;
+    private Long roleId;
 
     @TableField("role_name")
     private String roleName;

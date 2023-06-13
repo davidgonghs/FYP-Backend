@@ -34,7 +34,6 @@ public class MybatisGeneratorTest {
                 })
                 .packageConfig(builder -> {
                     builder.parent(packageName)
-                            .moduleName("sys")
                             .entity("entity")
                             .service("service")
                             .serviceImpl("service.impl")

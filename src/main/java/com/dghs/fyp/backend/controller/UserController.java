@@ -57,7 +57,7 @@ public class UserController {
     @ApiOperation("addUser")
     @PostMapping()
     public String addUser(@RequestBody User user) {
-        user.setUserId(IdUtil.getSnowflake(ServerConfig.WORKER_ID, ServerConfig.DATA_CENTER_ID).nextIdStr());
+        user.setUserId(IdUtil.getSnowflake(ServerConfig.WORKER_ID, ServerConfig.DATA_CENTER_ID).nextId());
         boolean result = userService.save(user);
         if (result) {
             return "success";
