@@ -3,13 +3,14 @@ package com.dghs.fyp.backend.entity;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import java.io.Serializable;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.io.Serializable;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 /**
  * <p>
@@ -27,8 +28,11 @@ public class UserSettings implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @TableId("user_id")
-    private Integer userId;
+    @TableId("settings_id")
+    private String settingsId;
+
+    @TableField("user_id")
+    private String userId;
 
     @TableField("calculation_mode")
     private String calculationMode;
@@ -61,7 +65,7 @@ public class UserSettings implements Serializable {
     private LocalDateTime updatedTime;
 
     @TableField("updated_by")
-    private Integer updatedBy;
+    private String updatedBy;
 
 
 }

@@ -1,9 +1,7 @@
 package com.dghs.fyp.backend.mapper;
 
-import com.dghs.fyp.backend.entity.User;
+import com.dghs.fyp.backend.sys.entity.User;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-
-import java.util.List;
 
 /**
  * <p>
@@ -13,8 +11,6 @@ import java.util.List;
  * @author David Gong
  * @since 2023-06-13
  */
-public interface UsersMapper extends BaseMapper<User> {
-
-    List<User> selectAll();
+public interface UserMapper extends BaseMapper<User> {
 
 }

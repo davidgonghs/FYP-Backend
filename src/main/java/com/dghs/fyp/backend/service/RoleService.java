@@ -1,9 +1,7 @@
 package com.dghs.fyp.backend.service;
 
-import com.dghs.fyp.backend.entity.User;
+import com.dghs.fyp.backend.sys.entity.Role;
 import com.baomidou.mybatisplus.extension.service.IService;
-
-import java.util.List;
 
 /**
  * <p>
@@ -13,7 +11,6 @@ import java.util.List;
  * @author David Gong
  * @since 2023-06-13
  */
-public interface UsersService extends IService<User> {
+public interface RoleService extends IService<Role> {
 
-    List<User> selectAll();
 }

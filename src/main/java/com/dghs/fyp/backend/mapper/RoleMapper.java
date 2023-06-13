@@ -1,6 +1,6 @@
 package com.dghs.fyp.backend.mapper;
 
-import com.dghs.fyp.backend.entity.Roles;
+import com.dghs.fyp.backend.sys.entity.Role;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author David Gong
  * @since 2023-06-13
  */
-public interface RolesMapper extends BaseMapper<Roles> {
+public interface RoleMapper extends BaseMapper<Role> {
 
 }

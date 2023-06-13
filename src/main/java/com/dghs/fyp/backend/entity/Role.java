@@ -1,14 +1,13 @@
 package com.dghs.fyp.backend.entity;
 
-import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import java.io.Serializable;
 import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.io.Serializable;
 
 /**
  * <p>
@@ -20,14 +19,14 @@ import lombok.Setter;
  */
 @Getter
 @Setter
-@TableName("roles")
-@ApiModel(value = "Roles对象", description = "")
-public class Roles implements Serializable {
+@TableName("role")
+@ApiModel(value = "Role对象", description = "")
+public class Role implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @TableId(value = "role_id", type = IdType.AUTO)
-    private Integer roleId;
+    @TableId("role_id")
+    private String roleId;
 
     @TableField("role_name")
     private String roleName;

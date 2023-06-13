@@ -1,6 +1,6 @@
 package com.dghs.fyp.backend.service;
 
-import com.dghs.fyp.backend.entity.Roles;
+import com.dghs.fyp.backend.entity.User;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @author David Gong
  * @since 2023-06-13
  */
-public interface RolesService extends IService<Roles> {
+public interface UserService extends IService<User> {
 
 }

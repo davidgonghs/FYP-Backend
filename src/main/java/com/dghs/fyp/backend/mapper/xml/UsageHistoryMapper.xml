@@ -3,7 +3,7 @@
 <mapper namespace="com.dghs.fyp.backend.mapper.UsageHistoryMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.dghs.fyp.backend.entity.UsageHistory">
+    <resultMap id="BaseResultMap" type="com.dghs.fyp.backend.sys.entity.UsageHistory">
         <id column="history_id" property="historyId" />
         <result column="user_id" property="userId" />
         <result column="usage_time" property="usageTime" />

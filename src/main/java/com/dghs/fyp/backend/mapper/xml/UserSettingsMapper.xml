@@ -3,8 +3,9 @@
 <mapper namespace="com.dghs.fyp.backend.mapper.UserSettingsMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.dghs.fyp.backend.entity.UserSettings">
-        <id column="user_id" property="userId" />
+    <resultMap id="BaseResultMap" type="com.dghs.fyp.backend.sys.entity.UserSettings">
+        <id column="settings_id" property="settingsId" />
+        <result column="user_id" property="userId" />
         <result column="calculation_mode" property="calculationMode" />
         <result column="pomodoro_intervals" property="pomodoroIntervals" />
         <result column="pomodoro_rest_time" property="pomodoroRestTime" />
@@ -19,7 +20,7 @@
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        user_id, calculation_mode, pomodoro_intervals, pomodoro_rest_time, voice_reminder_1, voice_reminder_2, voice_reminder_3, daily_usage_reminder_time, created_time, updated_time, updated_by
+        settings_id, user_id, calculation_mode, pomodoro_intervals, pomodoro_rest_time, voice_reminder_1, voice_reminder_2, voice_reminder_3, daily_usage_reminder_time, created_time, updated_time, updated_by
     </sql>
 
 </mapper>

@@ -3,7 +3,7 @@
 <mapper namespace="com.dghs.fyp.backend.mapper.UserDailyStatisticsMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.dghs.fyp.backend.entity.UserDailyStatistics">
+    <resultMap id="BaseResultMap" type="com.dghs.fyp.backend.sys.entity.UserDailyStatistics">
         <id column="data_id" property="dataId" />
         <result column="user_id" property="userId" />
         <result column="total_usage_time" property="totalUsageTime" />

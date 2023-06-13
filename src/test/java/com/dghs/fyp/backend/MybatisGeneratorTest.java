@@ -21,7 +21,7 @@ public class MybatisGeneratorTest {
 
         String dir = "E:\\FCUC\\DavidGong-FYP\\FYP-Backend\\src\\main\\java";
         String packageName = "com.dghs.fyp.backend";
-        String tables = "users,roles,usage_history,user_daily_statistics,user_roles,user_settings";
+        String tables = "user,role,usage_history,user_daily_statistics,user_roles,user_settings";
 
         FastAutoGenerator.create(url,username,password)
                 .globalConfig(builder -> {

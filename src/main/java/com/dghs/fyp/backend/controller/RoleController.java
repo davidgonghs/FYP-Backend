@@ -13,6 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/roles")
-public class RolesController {
+public class RoleController {
 
 }

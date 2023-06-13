@@ -1,8 +1,8 @@
 package com.dghs.fyp.backend.service.impl;
 
-import com.dghs.fyp.backend.entity.Roles;
-import com.dghs.fyp.backend.mapper.RolesMapper;
-import com.dghs.fyp.backend.service.RolesService;
+import com.dghs.fyp.backend.service.RoleService;
+import com.dghs.fyp.backend.sys.entity.Role;
+import com.dghs.fyp.backend.mapper.RoleMapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +15,6 @@ import org.springframework.stereotype.Service;
  * @since 2023-06-13
  */
 @Service
-public class RolesServiceImpl extends ServiceImpl<RolesMapper, Roles> implements RolesService {
+public class RoleServiceImpl extends ServiceImpl<RoleMapper, Role> implements RoleService {
 
 }
