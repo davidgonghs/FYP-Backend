@@ -1,6 +1,6 @@
 package com.dghs.fyp.backend.mapper;
 
-import com.dghs.fyp.backend.sys.entity.UserRoles;
+import com.dghs.fyp.backend.entity.UserRoles;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**

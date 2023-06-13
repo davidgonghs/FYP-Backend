@@ -3,7 +3,7 @@
 <mapper namespace="com.dghs.fyp.backend.mapper.UserRolesMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.dghs.fyp.backend.sys.entity.UserRoles">
+    <resultMap id="BaseResultMap" type="com.dghs.fyp.backend.entity.UserRoles">
         <id column="user_role_id" property="userRoleId" />
         <result column="user_id" property="userId" />
         <result column="role_id" property="roleId" />

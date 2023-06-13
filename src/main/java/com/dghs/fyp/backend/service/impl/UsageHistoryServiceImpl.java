@@ -1,6 +1,6 @@
 package com.dghs.fyp.backend.service.impl;
 
-import com.dghs.fyp.backend.sys.entity.UsageHistory;
+import com.dghs.fyp.backend.entity.UsageHistory;
 import com.dghs.fyp.backend.mapper.UsageHistoryMapper;
 import com.dghs.fyp.backend.service.UsageHistoryService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;

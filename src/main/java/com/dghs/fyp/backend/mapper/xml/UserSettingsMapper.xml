@@ -3,7 +3,7 @@
 <mapper namespace="com.dghs.fyp.backend.mapper.UserSettingsMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.dghs.fyp.backend.sys.entity.UserSettings">
+    <resultMap id="BaseResultMap" type="com.dghs.fyp.backend.entity.UserSettings">
         <id column="settings_id" property="settingsId" />
         <result column="user_id" property="userId" />
         <result column="calculation_mode" property="calculationMode" />
