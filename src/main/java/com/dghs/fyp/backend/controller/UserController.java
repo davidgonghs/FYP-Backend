@@ -28,9 +28,6 @@ public class UserController {
 
     private final UserService userService;
 
-
-
-
     @ApiOperation("list")
     @GetMapping("/list")
     public Object getAllUsers() {

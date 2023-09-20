@@ -60,12 +60,15 @@ public class SwaggerConfig implements WebMvcConfigurer {
 
     private ApiInfo apiInf() {
         return new ApiInfoBuilder()
-                .title("David FYP sitRight API Doc")
+                .title("David FYP PostureDetection API Doc")
                 .version(VERSION)
-                .description("David FYP sitRight API Doc")
+                .description("David FYP PostureDetection API Doc \r\n" +
+                        "www.davidgonghongshen.com \r\n" +
+                        "www.posturedetection.com ")
                 .contact(new Contact("David Gong", "www.davidgonghongshen.com", "davidgonghongshen@gmail.com"))
                 .termsOfServiceUrl("No terms of service")
                 .license("The Apache License, Version 2.0")
+                .termsOfServiceUrl("www.posturedetection.com")
                 .licenseUrl("http://www.apache.org/licenses/LICENSE-2.0.html")
                 .build();
     }
